@@ -1,0 +1,72 @@
+body {
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+
+.all {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    align-items: center;
+}
+
+/* Elements CSS Header */
+.part-1 {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+
+.header {
+    display: flex;
+    height: 80px;
+    width: 75%;
+}
+
+/* Logo du site */
+.logo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 25%;
+}
+
+.logo-click {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+
+/* Barre de recherche */
+.search-bar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 50%;
+}
+
+.search-bar-in {
+    position: absolute;
+    left: 30%;
+}
+
+
+/* Boutons de connexions / inscription */
+.buttons {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 25%;
+}
+
+.buttons-in {
+    position: absolute;
+    right: 20%;
+}
