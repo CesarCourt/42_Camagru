@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <link href="Indiquer_un_motif_data/samples.css" rel="stylesheet" type="text/css">
+        
+        <style type="text/css">
+            input {
+  margin-right: 10px;
+}
+
+input:invalid ~ span:after {
+  content: '✖';
+  padding-left: 5px;
+  position: absolute;
+}
+
+input:valid ~ span:after {
+  content: '✓';
+  padding-left: 5px;
+  position: absolute;
+}
+        </style>
+        
+        <title>&lt;input type="search"&gt; - Contraindre_la_taille_de_la_valeur_saisie - code sample</title>
+    </head>
+    <body>
+        
+            <form>
+  <div>
+    <label for="mySearch">Rechercher un utilisateur</label>
+    <input type="search" id="mySearch" name="q" placeholder="ID de 4 à 8 char." required="" size="30" minlength="4" maxlength="8">
+    <button>Rechercher</button>
+    <span class="validity"></span>
+  </div>
+</form>
+        
+        
+    
+</body></html>

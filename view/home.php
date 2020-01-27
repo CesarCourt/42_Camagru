@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="public/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Camagru - 42</title>
 </head>
 <body>
@@ -20,9 +21,8 @@
                 </div>
                 <div class="search-bar">
                     <div class="search-bar-in">
-                        <form action="" class="search-all" method="GET">
-                            <input class="search-in" type="text" autocapitalize="none" placehoder="Rechercher" />
-                            <input class="search-btn" type="submit" value="Rechercher" />
+                        <form action="/search" class="search-all" method="GET">
+                            <input class="search-in" name="q" type="search" autocapitalize="none" placeholder="Rechercher" />
                         </form>
                     </div>    
                 </div>
@@ -37,6 +37,7 @@
             </div>
         </div>
         <div class="part-2">
+            <a href="https://www.youtube.com/watch?v=s9zvDLm1rhY">Tuto espace membre PHP</a>
         </div>
         <div class="part-3">
         </div>
