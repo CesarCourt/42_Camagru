@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="part-2">
-            <a href="https://www.youtube.com/watch?v=s9zvDLm1rhY">Tuto espace membre PHP</a>
+            
         </div>
         <div class="part-3">
         </div>

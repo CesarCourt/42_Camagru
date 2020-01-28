@@ -15,7 +15,6 @@ body {
     align-items: center;
 }
 
-/* Elements CSS Header */
 .part-1 {
     display: flex;
     justify-content: center;
@@ -25,10 +24,27 @@ body {
     border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 }
 
+.part-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Elements CSS Header */
 .header {
     display: flex;
     height: 80px;
     width: 75%;
+}
+
+/* Element CSS Body */
+.form-1 {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
 }
 
 /* Logo du site */
@@ -97,4 +113,10 @@ body {
 .suscrib-link {
     text-decoration: none;
     color: #3897f0
+}
+
+/* Formulaire */
+.form-suscrib {
+    border-style: none;
+    box-sizing: border-box;
 }
