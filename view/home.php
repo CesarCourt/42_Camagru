@@ -15,7 +15,7 @@
                 <div class="logo">
                     <div class="logo-in">
                         <a class="logo-click" href="index.php">
-                            <img src="public/images/camagru.png" alt="logo_camagru" height="30px" width="100px">
+                            <img src="public/images/camagru.png" alt="logo_camagru" height="30px" />
                         </a>
                     </div>            
                 </div>
@@ -40,6 +40,7 @@
             
         </div>
         <div class="part-3">
+            
         </div>
     </div>
 </body>

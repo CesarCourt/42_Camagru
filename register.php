@@ -1,27 +1,3 @@
-<?php 
-
-session_start();
-include '/controller/database.php';
-
-if (isset($_POST['submit'])) {
-    $pseudo = htmlspecialchars($_POST['pseudo']);
-    $email = htmlspecialchars($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $password_confirm = password_hash($_POST['password_confirm'], PASSWORD_BCRYPT);
-    date_default_timezone_set('Europe/Paris');
-    $inscription_date = date('d/m/Y à H:i:s');
-
-    if($pseudo && $email && $password && $password_confirm) {
-        if (strlen($pseudo) < 12) {
-
-        } else {
-            
-        }
-    }
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
