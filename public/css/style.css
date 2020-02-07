@@ -361,7 +361,6 @@ section .activate-frame {
 
 .webcam-container, .stickers, .other-photos {
     width: 100%;
-    border: 1px solid black;
     margin-bottom: 10px;
 }
 
@@ -372,10 +371,15 @@ section .activate-frame {
 }
 
 .webcam {
-    width: 70%;
+    border: 1px solid black;
+    text-align: center;
+    width: 55%;
+    margin-right: 10%;
 }
 
 .upload {
+    border: 1px solid black;
+    text-align: center;
     width: 25%;
 }
 

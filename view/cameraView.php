@@ -5,10 +5,12 @@
         <div class="webcam-container">
             <h2>Webcam</h2>
             <div class="webcam">
-                prendre une photo
+                <h3>Prendre une photo</h3>
             </div>
             <div class="upload">
-                upload ta photo
+                <h3>upload ta photo</h3>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
             </div>
         </div>
         <div class="stickers">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le :  mer. 29 jan. 2020 à 11:11
--- Version du serveur :  5.6.43
--- Version de PHP :  5.6.40
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  ven. 07 fév. 2020 à 16:05
+-- Version du serveur :  8.0.18
+-- Version de PHP :  7.3.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,34 +25,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Structure de la table `user`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `login` varchar(12) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `mail` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `inscription_date` datetime NOT NULL
+  `mail` varchar(40) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `active` enum('0','1') NOT NULL DEFAULT '0',
+  `profile_pic` varchar(255) NOT NULL DEFAULT './public/icons/profile.png',
+  `bio` varchar(140) NOT NULL,
+  `activation_key` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `users`
+-- Déchargement des données de la table `user`
 --
 
-INSERT INTO `users` (`id`, `login`, `name`, `mail`, `password`, `inscription_date`) VALUES
-(1, 'amarc', 'Antoine Marc', 'amarc@student.42.fr', 'toto', '2020-01-23 12:00:00'),
-(2, 'tonton', 'Xavier Niel', 'tonton@42.fr', 'helloworld', '2019-09-19 00:00:00');
+INSERT INTO `user` (`id`, `login`, `mail`, `name`, `pass`, `active`, `profile_pic`, `bio`, `activation_key`) VALUES
+(1, 'amarc', 'amarc@student.42.com', 'Antoine Marc', 'toto', '0', './public/images/profile.png', '', '0'),
+(76, 'toto', 'mitiva9807@mailboxt.net', 'Tototo42', '$2y$10$xsTUyy527JaA8mNDe.r/UOd8q9.5Me5yXKN91XHIzRorDty4u0aCq', '1', './public/images/profile.png', 'Co-Founder, The Family\r\nthefamily.co', '0cedde00216192c3c7bef3ec268a5d52');
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `users`
+-- Index pour la table `user`
 --
-ALTER TABLE `users`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,9 +63,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT pour la table `user`
 --
-ALTER TABLE `users`
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
