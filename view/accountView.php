@@ -20,11 +20,7 @@
                 <p><?= $profile['bio'] ?></p>
             </div>
         </div>
-        <div class="camera">
-            <h1><a href="camera.php">SE PRENDRE EN PHOTO</a></h1>
-        </div>
     </div>
-    
 </section>
 
 <?php

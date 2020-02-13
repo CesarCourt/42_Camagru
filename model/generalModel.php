@@ -1,7 +1,6 @@
 <?php
 
 include ('userModel.php');
-include ('cameraModel.php');
 
 function db_connect() 
 {
@@ -14,7 +13,7 @@ function db_connect()
 		return $db;
 	}
 	catch (PDOException $e) {
-		echo 'Erreur de connection: ' . $e->getMessage();
+		echo 'Connection error: ' . $e->getMessage();
 	}
 }
 
@@ -63,23 +62,53 @@ function password_secure($password)
 
 	$error = "";
 	if( strlen($password) < 8 ) 
-		$error.= " trop court ";
+		$error.= " too short ";
 		
 	if( !preg_match("#[0-9]+#", $password) )
-		$error.= "ne contenant pas de chiffre ";
+		$error.= "| without numbers ";
 		
 	if( !preg_match("#[a-z]+#", $password) ) 
-		$error.= "sans minuscule ";
+		$error.= "| without lowercase letters ";
 		
 	if( !preg_match("#[A-Z]+#", $password) ) 
-		$error.= "sans majuscule ";
+		$error.= "| without uppercase letters ";
 	
 	if (!empty($error))
 	{
-		$_SESSION['error'] = "Mot de passe ".$error;
+		$_SESSION['error'] = "Password : ".$error;
 		return false;
 	}
 
 	else
 		return true;
+}
+
+function redir($redir_path)
+{
+    echo "<script>setTimeout(\"location.href = \'$redir_path\';\",2000);</script>";
+}
+
+
+/* GALLERY */
+
+function add_picture($login, $file) {
+    $profile = get_profile($login);
+    $db = db_connect();
+
+    $sql = "INSERT INTO picture (id_user, img) VALUES ('".$profile['id']."', '".$file."')";
+    $db->query($sql);
+    $db = NULL;
+    return true;
+}
+
+function get_pics($login) {
+	$profile = get_profile($login);
+	$db = db_connect();
+
+	// $sql = $db->prepare("SELECT * FROM picture WHERE id_user = :id");
+	//$sql->bindParam(":id", $profile['id'], PDO::PARAM_INT);
+
+	$sql = 'SELECT * FROM picture WHERE id_user = "'.$profile['id'].'"';
+	$data = $db->query($sql);
+	return ($data);
 }

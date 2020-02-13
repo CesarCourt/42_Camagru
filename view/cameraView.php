@@ -1,29 +1,28 @@
 <?php ob_start(); ?>
 
 <section id="content">
-    <div class="camera-container">
-        <div class="webcam-container">
-            <h2>Webcam</h2>
-            <div class="webcam">
-                <h3>Prendre une photo</h3>
-            </div>
-            <div class="upload">
-                <h3>upload ta photo</h3>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Upload Image" name="submit">
-            </div>
+    <article id="photo-section">
+        <div id="photo-frame">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <button type="submit" name="submit">Upload your pictures</button>
+            </form>
         </div>
-        <div class="stickers">
-            <h2>Stickers</h2>
+        <div id="sticker-frame">
+            <p>Stickers</p>
         </div>
-        <div class="other-photos">
-            <h2>My photos</h2>
-        </div>
-    </div>
+    </article>
+    <article id="feed">
+        <?php 
+            while($result = $data->fetch()) {
+                echo "<img src='".$result['img']."' alt=''>";
+            }
+        ?>
+    </article>
 </section>
 
 <?php
     $content = ob_get_clean();
-    $title = $profile['login']." &#8226; Camagru";
+    $title = "Camera &#8226; Camagru";
     require('view/template.php');
 ?>

@@ -6,9 +6,12 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #FAFAFA !important;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 a {
@@ -100,10 +103,20 @@ section {
 }
 
 #feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid black;
     width: 600px;
     height: 730px;
     margin-left: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#feed img {
+    margin: 10px 0px;
+    width: 240px;
 }
 
 #photo-frame {
@@ -125,11 +138,12 @@ section {
 /* FOOTER */
 /**********/
 footer p {
-    position: fixed;
+    position: absolute;
+    right: 0;
     bottom: 0;
-    width: 100%;
+    left: 0;
     text-align: center;
-    margin-top: 100px;
+    padding: 1rem;
 }
 
 
@@ -347,46 +361,4 @@ section .activate-frame {
 
 .modify-form input, textarea {
     width: 300px;
-}
-
-/******************/
-/*     CAMERA     */
-/******************/
-
-.camera-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.webcam-container, .stickers, .other-photos {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.webcam-container {
-    display: flex;
-    flex-direction: row;
-    height: 400px;
-}
-
-.webcam {
-    border: 1px solid black;
-    text-align: center;
-    width: 55%;
-    margin-right: 10%;
-}
-
-.upload {
-    border: 1px solid black;
-    text-align: center;
-    width: 25%;
-}
-
-.stickers {
-    height: 250px;
-}
-
-.other-photos {
-    height: 300px;
 }

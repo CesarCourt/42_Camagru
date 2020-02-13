@@ -1,14 +1,8 @@
 <?php
-$str = 'foobarbaz';
-$srcDIR = "http://".$_SERVER['HTTP_HOST']."/amarc";
 
-if (preg_match('/(\t|\s|\n|\v|\f|\r|\0)+/', $str) == true)
-    echo "machine invalide";
-else
-    echo "good work boys";
+require('model/generalModel.php');
+include ('config/database.php');
 
+$redir_path = "tata.php";
 
-echo "<br>";
-echo $_SERVER['HTTP_HOST'];
-echo "<br>";
-echo $srcDIR;
+echo "<script>setTimeout(\"location.href = \'$redir_path\';\",2000);</script>";
