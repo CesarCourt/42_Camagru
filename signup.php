@@ -4,6 +4,9 @@ session_start();
 require('model/generalModel.php');
 include ("config/database.php");
 
+if ($_SESSION['login'])
+	header('Location:index.php');
+
 if (isset($_POST['submit']))
 {
     $_POST['login'] = strip_tags($_POST['login']);
