@@ -4,6 +4,9 @@ session_start();
 require('model/generalModel.php');
 include ("config/database.php");
 
+if ($_SESSION['login'])
+	header('Location:index.php');
+
 if ((empty($_POST['login']) || empty($_POST['passwd'])) && isset($_POST['submit']))
 	$_SESSION['error'] = "Champs incomplets";
 else if (isset($_POST['login']) && isset($_POST['passwd']) && isset($_POST['submit']))
